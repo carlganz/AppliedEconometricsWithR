@@ -40,7 +40,8 @@ Parade %>% filter(celebrity=="yes") %>% summarise(CelebMean=mean(earnings),Celeb
 plot(log(Parade$earnings)~Parade$celebrity,xlab="Celebrity",ylab="log(Earnings)")
 
 ## 3
-bkde(Parade$earnings)
+density(log(Parade$earnings))
+density(log(Parade$earnings),bw="SJ")
 
 ## 4
 # a
@@ -58,10 +59,3 @@ plot(log(CPS1988$wage)~CPS1988$smsa)
 plot(log(CPS1988$wage)~CPS1988$region)
 plot(log(CPS1988$wage)~CPS1988$parttime)
 
-data("Journals")
-lm1<-lm(Journals$price~Journals$citations)
-plot(lm1)
-logLik(lm1)
-AIC(lm1)
-deviance(lm1)
-vcov(lm1)
