@@ -1,6 +1,7 @@
 library(AER)
 library(dplyr)
 library(KernSmooth)
+set.seed(30)
 # Chapter 2
 ## 1
 A=diag(1,10)
